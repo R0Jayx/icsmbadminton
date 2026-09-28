@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ICSM Badminton · Welcome 26/27</title>
+<meta name="description" content="ICSM Badminton: join the WhatsApp community, buy membership, and see Give it a Go and trial dates.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --wall: #4E151C;
+    --maroon: #8B2A34;
+    --maroon-deep: #641C25;
+    --cream: #F4E9CD;
+    --gold: #E4B54A;
+    --ink: #3B1B1F;
+    --white: #FFFFFF;
+    --line: rgba(255,255,255,0.14);
+    box-sizing: border-box;
+  }
+  *, *::before, *::after { box-sizing: inherit; }
+  html { background: var(--wall); }
+  body {
+    margin: 0; min-height: 100%;
+    background: var(--wall);
+    color: var(--white);
+    font-family: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px; line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    padding: env(safe-area-inset-top, 0px) 0 env(safe-area-inset-bottom, 0px);
+  }
+  a { color: inherit; }
+  a:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+  .display { font-family: "Bebas Neue", Impact, "Arial Narrow", sans-serif; font-weight: 400; letter-spacing: 0.02em; }
+
+  /* the poster */
+  .poster {
+    position: relative; overflow: hidden;
+    max-width: 30rem; margin: 0 auto; min-height: 100vh; min-height: 100dvh;
+    background: var(--maroon);
+    padding: 1.4rem 1.25rem 2.25rem;
+  }
+  @media (min-width: 40rem) {
+    body { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+    .poster { min-height: 0; box-shadow: 0 30px 60px rgba(0,0,0,0.45); }
+  }
+  .poster > * { position: relative; }
+
+  .top { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; }
+  .top .club { font-size: 1.3rem; letter-spacing: 0.08em; }
+  .top .fair { font-size: 0.72rem; font-weight: 700; color: var(--gold); text-align: right; line-height: 1.3; }
+
+  .shuttle {
+    position: absolute; right: 0.4rem; top: 4.4rem; width: 9rem; height: auto;
+    transform: rotate(-38deg); pointer-events: none;
+  }
+  h1 {
+    margin: 1.6rem 0 0; font-size: clamp(4.2rem, 21vw, 6.4rem); line-height: 0.86;
+  }
+  h1 .gold { color: var(--gold); }
+  .lede { margin: 1rem 0 0; max-width: 20rem; font-size: 0.95rem; font-weight: 500; }
+
+  /* cream cards */
+  .card {
+    background: var(--cream); color: var(--ink);
+    padding: 1.1rem 1.15rem 1.2rem; margin-top: 1.75rem;
+    box-shadow: 0 16px 30px rgba(0,0,0,0.32);
+  }
+  .card.left { transform: rotate(-1.6deg); }
+  .card.right { transform: rotate(1.3deg); }
+  .card::before {
+    content: ""; position: absolute; left: 50%; top: -0.55rem; width: 5.5rem; height: 1.1rem;
+    background: rgba(228,181,74,0.85); transform: translateX(-50%) rotate(-2deg);
+  }
+  .card h2 { margin: 0 0 0.6rem; font-size: 2.5rem; line-height: 0.9; color: var(--maroon); }
+  .card h2 small { display: block; font-family: "Montserrat", sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.06em; color: var(--ink); margin-bottom: 0.3rem; }
+  .row { display: grid; grid-template-columns: 7.4rem 1fr; gap: 0.15rem 0.6rem; align-items: baseline; padding: 0.45rem 0; border-top: 1px solid rgba(59,27,31,0.18); }
+  .row:first-of-type { border-top: 0; }
+  .row .when { font-size: 1.55rem; line-height: 1; color: var(--maroon); }
+  .row .time { font-size: 1.05rem; font-weight: 700; }
+  .row .note { grid-column: 2; font-size: 0.85rem; }
+  .card .foot { margin: 0.6rem 0 0; font-size: 0.8rem; }
+
+  /* join card */
+  .join { background: var(--maroon-deep); color: var(--cream); transform: rotate(-0.8deg); }
+  .join::before { background: rgba(244,233,205,0.6); }
+  .join h2 { color: var(--gold); }
+  .join h2 small { color: var(--cream); }
+  .join p { margin: 0 0 0.9rem; font-size: 0.88rem; }
+  .btn {
+    display: block; text-align: center; text-decoration: none; margin-top: 0.55rem;
+    padding: 0.95rem 0.75rem; font-weight: 700; font-size: 0.98rem;
+  }
+  .btn.gold { background: var(--gold); color: var(--ink); }
+  .btn.line { box-shadow: inset 0 0 0 2px var(--cream); color: var(--cream); }
+  .btn:active { transform: translateY(1px); }
+  .all { margin: 0.9rem 0 0; font-size: 0.8rem; text-align: center; }
+
+  .small { margin: 1.75rem 0 0; font-size: 0.74rem; line-height: 1.45; color: rgba(255,255,255,0.78); }
+  .small p { margin: 0 0 0.5rem; }
+  .handle { margin-top: 1.25rem; font-size: 2.2rem; line-height: 1; }
+
+  @media (prefers-reduced-motion: no-preference) {
+    h1 { animation: rise 0.7s cubic-bezier(.2,.7,.2,1) both; }
+    @keyframes rise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+  }
+</style>
+</head>
+<body>
+<main class="poster">
+
+  <div class="top">
+    <div class="display club">ICSM Badminton</div>
+    <div class="fair">Freshers<br>2026</div>
+  </div>
+
+  <svg class="shuttle" viewBox="0 0 220 280" aria-hidden="true" focusable="false">
+    <path fill="#E4B54A" d="M78 222 v12 a32 32 0 0 0 64 0 v-12 z"/>
+    <rect x="78" y="208" width="64" height="14" fill="#C4922A"/>
+    <path fill="#E4B54A" stroke="#8B2A34" stroke-width="1.8" d="M26.0 118.0 Q20.8 67.4 -32.5 27.2 Q-17.9 92.3 26.0 118.0z"/>
+    <line x1="26.0" y1="118.0" x2="-26.7" y2="36.3" stroke="#C4922A" stroke-width="2"/>
+    <path fill="#E4B54A" stroke="#8B2A34" stroke-width="1.8" d="M47.0 118.0 Q48.0 67.2 0.0 20.8 Q6.6 87.2 47.0 118.0z"/>
+    <line x1="47.0" y1="118.0" x2="4.7" y2="30.5" stroke="#C4922A" stroke-width="2"/>
+    <path fill="#E4B54A" stroke="#8B2A34" stroke-width="1.8" d="M68.0 118.0 Q76.0 67.8 34.9 15.2 Q32.2 81.9 68.0 118.0z"/>
+    <line x1="68.0" y1="118.0" x2="38.2" y2="25.5" stroke="#C4922A" stroke-width="2"/>
+    <path fill="#E4B54A" stroke="#8B2A34" stroke-width="1.8" d="M89.0 118.0 Q104.5 69.6 71.8 11.4 Q59.1 76.9 89.0 118.0z"/>
+    <line x1="89.0" y1="118.0" x2="73.5" y2="22.0" stroke="#C4922A" stroke-width="2"/>
+    <path fill="#E4B54A" stroke="#8B2A34" stroke-width="1.8" d="M110.0 118.0 Q133.0 72.6 110.0 10.0 Q87.0 72.6 110.0 118.0z"/>
+    <line x1="110.0" y1="118.0" x2="110.0" y2="20.8" stroke="#C4922A" stroke-width="2"/>
+    <path fill="#E4B54A" stroke="#8B2A34" stroke-width="1.8" d="M131.0 118.0 Q160.9 76.9 148.2 11.4 Q115.5 69.6 131.0 118.0z"/>
+    <line x1="131.0" y1="118.0" x2="146.5" y2="22.0" stroke="#C4922A" stroke-width="2"/>
+    <path fill="#E4B54A" stroke="#8B2A34" stroke-width="1.8" d="M152.0 118.0 Q187.8 81.9 185.1 15.2 Q144.0 67.8 152.0 118.0z"/>
+    <line x1="152.0" y1="118.0" x2="181.8" y2="25.5" stroke="#C4922A" stroke-width="2"/>
+    <path fill="#E4B54A" stroke="#8B2A34" stroke-width="1.8" d="M173.0 118.0 Q213.4 87.2 220.0 20.8 Q172.0 67.2 173.0 118.0z"/>
+    <line x1="173.0" y1="118.0" x2="215.3" y2="30.5" stroke="#C4922A" stroke-width="2"/>
+    <path fill="#E4B54A" stroke="#8B2A34" stroke-width="1.8" d="M194.0 118.0 Q237.9 92.3 252.5 27.2 Q199.2 67.4 194.0 118.0z"/>
+    <line x1="194.0" y1="118.0" x2="246.7" y2="36.3" stroke="#C4922A" stroke-width="2"/>
+    <line x1="84.0" y1="208.0" x2="26.0" y2="118.0" stroke="#E4B54A" stroke-width="4" stroke-linecap="round"/>
+    <line x1="90.5" y1="208.0" x2="47.0" y2="118.0" stroke="#E4B54A" stroke-width="4" stroke-linecap="round"/>
+    <line x1="97.0" y1="208.0" x2="68.0" y2="118.0" stroke="#E4B54A" stroke-width="4" stroke-linecap="round"/>
+    <line x1="103.5" y1="208.0" x2="89.0" y2="118.0" stroke="#E4B54A" stroke-width="4" stroke-linecap="round"/>
+    <line x1="110.0" y1="208.0" x2="110.0" y2="118.0" stroke="#E4B54A" stroke-width="4" stroke-linecap="round"/>
+    <line x1="116.5" y1="208.0" x2="131.0" y2="118.0" stroke="#E4B54A" stroke-width="4" stroke-linecap="round"/>
+    <line x1="123.0" y1="208.0" x2="152.0" y2="118.0" stroke="#E4B54A" stroke-width="4" stroke-linecap="round"/>
+    <line x1="129.5" y1="208.0" x2="173.0" y2="118.0" stroke="#E4B54A" stroke-width="4" stroke-linecap="round"/>
+    <line x1="136.0" y1="208.0" x2="194.0" y2="118.0" stroke="#E4B54A" stroke-width="4" stroke-linecap="round"/>
+    <path fill="none" stroke="#F4E9CD" stroke-width="2.6" d="M64.7 178 Q110 190 155.3 178"/>
+    <path fill="none" stroke="#F4E9CD" stroke-width="2.6" d="M44.0 146 Q110 162 176.0 146"/>
+  </svg>
+
+  <h1 class="display">Welcome<br>to the<br><span class="gold">26/27</span><br><span class="gold">cohort</span></h1>
+  <p class="lede">Teams, weekly training, socials, and free taster sessions for every level. Everything you need to join is here.</p>
+
+  <section class="card left" aria-labelledby="gig">
+    <h2 class="display" id="gig"><small>Free · all levels · 28 places each</small>Give it a Go</h2>
+    <div class="row"><div class="when display">Tue 29 Sept</div><div class="time">4–5pm</div></div>
+    <div class="row"><div class="when display">Sun 4 Oct</div><div class="time">9–10am</div></div>
+    <p class="foot">Venue and sign-up are posted in the WhatsApp community. Join it first so you don't miss a place.</p>
+  </section>
+
+  <section class="card right" aria-labelledby="trials">
+    <h2 class="display" id="trials"><small>First stage · come to one slot</small>Team trials</h2>
+    <div class="row"><div class="when display">Mon 5 Oct</div><div class="time">4–6pm</div></div>
+    <div class="row"><div class="when display">Tue 6 Oct</div><div class="time">12–2pm and 2–4pm</div><div class="note">Tuesday slots to be confirmed.</div></div>
+    <p class="foot">Umpired 3-minute half-court singles. Two losses and you're out; three wins in a row and you're through.</p>
+  </section>
+
+  <section class="card join" aria-labelledby="join">
+    <h2 class="display" id="join"><small>WhatsApp · membership · Instagram</small>Join us</h2>
+    <p>The WhatsApp community is free. To play, you need both memberships, bought through the Union shop.</p>
+    <a class="btn gold" href="https://chat.whatsapp.com/FJ14gwMx5xD6CNAVPs5U8r">Join the WhatsApp community</a>
+    <a class="btn line" href="https://www-s.imperialcollegeunion.org/shop/product/2224-badminton-icsm-membership-26-27">ICSM Badminton membership</a>
+    <a class="btn line" href="https://www-s.imperialcollegeunion.org/shop/product/1948-imperial-athletes-membership-26-27">Imperial Athletes membership</a>
+    <a class="btn line" href="https://www.instagram.com/icsmbadminton/">Follow @icsmbadminton on Instagram</a>
+    <p class="all">All links in one place: <a href="https://linktr.ee/ICSMBadminton26_7">linktr.ee/ICSMBadminton26_7</a></p>
+  </section>
+
+  <div class="small">
+    <p>Joining the WhatsApp community shares your phone number with other members. We use it only for session and club updates. Leave at any time, or ask us to delete your details by messaging @icsmbadminton.</p>
+    <p>This page doesn't collect any information.</p>
+  </div>
+
+</main>
+</body>
+</html>
